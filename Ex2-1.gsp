@@ -1,23 +1,17 @@
 {
-    "file": "Ex2-1-labor.gms",
+    "file": "HW-4.gms",
     "name": "Ex2-1",
     "nodes": [
         {
             "codecMib": 106,
-            "file": "Ex2-1-labor.gms",
-            "name": "Ex2-1-labor.gms",
+            "file": "HW-4.gms",
+            "name": "HW-4.gms",
             "type": "gms"
         },
         {
             "codecMib": 106,
-            "file": "Ex2-1-labor.lst",
-            "name": "Ex2-1-labor.lst",
-            "type": "lst"
-        },
-        {
-            "codecMib": 106,
-            "file": "Ex2-1.lst",
-            "name": "Ex2-1.lst",
+            "file": "HW-4.lst",
+            "name": "HW-4.lst",
             "type": "lst"
         }
     ],

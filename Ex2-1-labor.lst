@@ -1,4 +1,4 @@
-GAMS 47.6.0  c2de9d6d Sep 12, 2024          WEX-WEI x86 64bit/MS Windows - 09/25/24 12:29:32 Page 1
+GAMS 47.6.0  c2de9d6d Sep 12, 2024          WEX-WEI x86 64bit/MS Windows - 09/30/24 14:23:33 Page 1
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 C o m p i l a t i o n
 
@@ -76,7 +76,7 @@ C o m p i l a t i o n
 
 
 COMPILATION TIME     =        0.000 SECONDS      3 MB  47.6.0 c2de9d6d WEX-WEI
-GAMS 47.6.0  c2de9d6d Sep 12, 2024          WEX-WEI x86 64bit/MS Windows - 09/25/24 12:29:32 Page 2
+GAMS 47.6.0  c2de9d6d Sep 12, 2024          WEX-WEI x86 64bit/MS Windows - 09/30/24 14:23:33 Page 2
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Equation Listing    SOLVE PLANTING Using LP From line 70
 
@@ -94,7 +94,7 @@ RES_CONSTRAIN(Land)..  4*X(Eggplant) + 3*X(Tomatoes) =L= 12000 ; (LHS = 0)
      
 RES_CONSTRAIN(Labor)..  5*X(Eggplant) + 2.5*X(Tomatoes) =L= 17500 ; (LHS = 0)
      
-GAMS 47.6.0  c2de9d6d Sep 12, 2024          WEX-WEI x86 64bit/MS Windows - 09/25/24 12:29:32 Page 3
+GAMS 47.6.0  c2de9d6d Sep 12, 2024          WEX-WEI x86 64bit/MS Windows - 09/30/24 14:23:33 Page 3
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Column Listing      SOLVE PLANTING Using LP From line 70
 
@@ -122,7 +122,7 @@ VPROFIT
                 (.LO, .L, .UP, .M = -INF, 0, +INF, 0)
         1       PROFIT
 
-GAMS 47.6.0  c2de9d6d Sep 12, 2024          WEX-WEI x86 64bit/MS Windows - 09/25/24 12:29:32 Page 4
+GAMS 47.6.0  c2de9d6d Sep 12, 2024          WEX-WEI x86 64bit/MS Windows - 09/30/24 14:23:33 Page 4
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Range Statistics    SOLVE PLANTING Using LP From line 70
 
@@ -133,7 +133,7 @@ RHS       [min, max] : [ 1.200E+04, 4.000E+06] - Zero values observed as well
 Bound     [min, max] : [        NA,        NA] - Zero values observed as well
 Matrix    [min, max] : [ 1.000E+00, 2.000E+03]
 
-GAMS 47.6.0  c2de9d6d Sep 12, 2024          WEX-WEI x86 64bit/MS Windows - 09/25/24 12:29:32 Page 5
+GAMS 47.6.0  c2de9d6d Sep 12, 2024          WEX-WEI x86 64bit/MS Windows - 09/30/24 14:23:33 Page 5
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Model Statistics    SOLVE PLANTING Using LP From line 70
 
@@ -146,7 +146,7 @@ NON ZERO ELEMENTS             9
 
 
 GENERATION TIME      =        0.063 SECONDS      4 MB  47.6.0 c2de9d6d WEX-WEI
-GAMS 47.6.0  c2de9d6d Sep 12, 2024          WEX-WEI x86 64bit/MS Windows - 09/25/24 12:29:32 Page 6
+GAMS 47.6.0  c2de9d6d Sep 12, 2024          WEX-WEI x86 64bit/MS Windows - 09/30/24 14:23:33 Page 6
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Solution Report     SOLVE PLANTING Using LP From line 70
 
@@ -212,7 +212,7 @@ Tomatoes          .           800.0000        +INF             .
                              0  UNBOUNDED
 
 
-EXECUTION TIME       =        0.141 SECONDS      4 MB  47.6.0 c2de9d6d WEX-WEI
+EXECUTION TIME       =        0.204 SECONDS      4 MB  47.6.0 c2de9d6d WEX-WEI
 
 
 USER: CEE 6410 Water Resources Systems Analysis      G240923|0002AO-GEN

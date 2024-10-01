@@ -1,0 +1,14 @@
+B 3 C o m p i l a t i o n
+B 84 Equation Listing    SOLVE IRRIGATION Using LP From line 73
+D 87 PROFIT
+D 92 RES_CONSTRAIN
+B 104 Column Listing      SOLVE IRRIGATION Using LP From line 73
+E 107 X
+E 125 VPROFIT
+B 133 Range Statistics    SOLVE IRRIGATION Using LP From line 73
+B 144 Model Statistics    SOLVE IRRIGATION Using LP From line 73
+B 157 Solution Report     SOLVE IRRIGATION Using LP From line 73
+F 190 PROFIT
+F 194 RES_CONSTRAIN
+G 203 X
+G 212 VPROFIT

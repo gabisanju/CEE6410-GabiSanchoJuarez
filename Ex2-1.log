@@ -1,9 +1,8 @@
-
---- Job Ex2-1-labor.gms Start 09/25/24 12:29:32 47.6.0 c2de9d6d WEX-WEI x86 64bit/MS Windows
+--- Job HW-4.gms Start 09/30/24 18:43:06 47.6.0 c2de9d6d WEX-WEI x86 64bit/MS Windows
 --- Applying:
     C:\GAMS\47\gmsprmNT.txt
 --- GAMS Parameters defined
-    Input C:\Users\A02395542\Box\2024_Fall\CEE6410\gams_tareas\CEE6410-GabiSanchoJuarez\Ex2-1-labor.gms
+    Input C:\Users\A02395542\Box\2024_Fall\CEE6410\gams_tareas\CEE6410-GabiSanchoJuarez\HW-4.gms
     PageSize 0
     ScrDir C:\Users\A02395542\Box\2024_Fall\CEE6410\gams_tareas\CEE6410-GabiSanchoJuarez\225a\
     SysDir C:\GAMS\47\
@@ -21,16 +20,16 @@ Licensee: CEE 6410 Water Resources Systems Analysis      G240923|0002AO-GEN
 Processor information: 1 socket(s), 6 core(s), and 12 thread(s) available
 GAMS 47.6.0   Copyright (C) 1987-2024 GAMS Development. All rights reserved
 --- Starting compilation
---- Ex2-1-labor.gms(72) 3 Mb
+--- HW-4.gms(75) 3 Mb
 --- Starting execution: elapsed 0:00:00.016
---- Generating LP model PLANTING
---- Ex2-1-labor.gms(70) 4 Mb
----   4 rows  3 columns  9 non-zeroes
+--- Generating LP model IRRIGATION
+--- HW-4.gms(73) 4 Mb
+---   5 rows  3 columns  10 non-zeroes
 --- Range statistics (absolute non-zero finite values)
---- RHS       [min, max] : [ 1.200E+04, 4.000E+06] - Zero values observed as well
+--- RHS       [min, max] : [ 6.000E+03, 1.800E+04] - Zero values observed as well
 --- Bound     [min, max] : [        NA,        NA] - Zero values observed as well
---- Matrix    [min, max] : [ 1.000E+00, 2.000E+03]
---- Executing CPLEX (Solvelink=2): elapsed 0:00:00.074
+--- Matrix    [min, max] : [ 1.000E+00, 1.200E+02]
+--- Executing CPLEX (Solvelink=2): elapsed 0:00:00.078
 
 IBM ILOG CPLEX   47.6.0 c2de9d6d Sep 12, 2024          WEI x86 64bit/MS Window
 
@@ -48,22 +47,22 @@ CPXPARAM_MIP_Display                             4
 CPXPARAM_MIP_Pool_Capacity                       0
 CPXPARAM_MIP_Tolerances_AbsMIPGap                0
 Tried aggregator 1 time.
-LP Presolve eliminated 0 rows and 1 columns.
+LP Presolve eliminated 1 rows and 1 columns.
 Reduced LP has 3 rows, 2 columns, and 6 nonzeros.
 Presolve time = 0.00 sec. (0.00 ticks)
 
 Iteration      Dual Objective            In Variable           Out Variable
-     1 sI            0.000000            X(Tomatoes)RES_CONSTRAIN(Lab slack
-     2           22333.333333            X(Eggplant)RES_CONSTRAIN(Wat slack
-     3           20000.000000RES_CONSTRAIN(Lab slackRES_CONSTRAIN(Lan slack
+     1  I            0.000000               X(Grain)RES_CONSTRAIN(Wat slack
+     2         1213333.333333                 X(Hay)RES_CONSTRAIN(Wat slack
+     3         1160000.000000RES_CONSTRAIN(Wat slackRES_CONSTRAIN(Lan slack
 
 --- LP status (1): optimal.
---- Cplex Time: 0.00sec (det. 0.01 ticks)
+--- Cplex Time: 0.01sec (det. 0.01 ticks)
 
 
 Optimal solution found
-Objective:        20000.000000
+Objective:      1160000.000000
 
---- Reading solution for model PLANTING
+--- Reading solution for model IRRIGATION
 *** Status: Normal completion
---- Job Ex2-1-labor.gms Stop 09/25/24 12:29:32 elapsed 0:00:00.171
+--- Job HW-4.gms Stop 09/30/24 18:43:06 elapsed 0:00:00.176
