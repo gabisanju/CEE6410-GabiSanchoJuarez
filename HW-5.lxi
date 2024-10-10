@@ -1,0 +1,24 @@
+B 3 C o m p i l a t i o n
+B 91 Equation Listing    SOLVE RESERVOIR Using LP From line 80
+D 94 BENEFIT
+D 99 Reservoir_capacity
+D 110 Hydropower_capacity
+D 121 Riverflow_A
+D 132 EndStorage
+D 137 Inflowsto_C
+D 148 ResBalance
+B 160 Column Listing      SOLVE RESERVOIR Using LP From line 80
+E 163 X
+E 185 VBenefit
+B 193 Range Statistics    SOLVE RESERVOIR Using LP From line 80
+B 204 Model Statistics    SOLVE RESERVOIR Using LP From line 80
+B 217 Solution Report     SOLVE RESERVOIR Using LP From line 80
+F 250 BENEFIT
+F 254 Reservoir_capacity
+F 265 Hydropower_capacity
+F 276 Riverflow_A
+F 289 EndStorage
+F 293 Inflowsto_C
+F 304 ResBalance
+G 315 X
+G 352 VBenefit

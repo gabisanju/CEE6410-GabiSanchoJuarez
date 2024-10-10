@@ -1,11 +1,11 @@
 
---- Job HW-5.gms Start 10/09/24 20:00:58 47.6.0 c2de9d6d WEX-WEI x86 64bit/MS Windows
+--- Job HW-5.gms Start 10/09/24 22:18:39 47.6.0 c2de9d6d WEX-WEI x86 64bit/MS Windows
 --- Applying:
     C:\GAMS\47\gmsprmNT.txt
 --- GAMS Parameters defined
-    Input C:\Users\A02395542\Box\2024_Fall\CEE6410\gams_tareas\CEE6410-GabiSanchoJuarez\HW-5.gms
+    Input C:\Users\gabis\Box\2024_Fall\CEE6410\gams_tareas\CEE6410-GabiSanchoJuarez\HW-5.gms
     PageSize 0
-    ScrDir C:\Users\A02395542\Box\2024_Fall\CEE6410\gams_tareas\CEE6410-GabiSanchoJuarez\225a\
+    ScrDir C:\Users\gabis\Box\2024_Fall\CEE6410\gams_tareas\CEE6410-GabiSanchoJuarez\225a\
     SysDir C:\GAMS\47\
     LogOption 3
     ErrMsg 1
@@ -14,23 +14,23 @@
     LstTitleLeftAligned 1
 Licensee: CEE 6410 Water Resources Systems Analysis      G240923|0002AO-GEN
           Utah State University, Utah Water Research Laboratory     DCE3763
-          C:\Users\A02395542\Documents\GAMS\gamslice.txt
+          C:\Users\gabis\OneDrive\Documentos\GAMS\gamslice.txt
           License Admin: David Rosenberg, david.rosenberg@usu.edu          
           Other time limited license
           The evaluation period of the license will expire on Dec 22, 2024
-Processor information: 1 socket(s), 6 core(s), and 12 thread(s) available
+Processor information: 1 socket(s), 4 core(s), and 8 thread(s) available
 GAMS 47.6.0   Copyright (C) 1987-2024 GAMS Development. All rights reserved
 --- Starting compilation
---- HW-5.gms(99) 3 Mb
---- Starting execution: elapsed 0:00:00.022
+--- HW-5.gms(82) 3 Mb
+--- Starting execution: elapsed 0:00:00.042
 --- Generating LP model RESERVOIR
---- HW-5.gms(97) 4 Mb
----   44 rows  31 columns  103 non-zeroes
+--- HW-5.gms(80) 4 Mb
+---   32 rows  31 columns  80 non-zeroes
 --- Range statistics (absolute non-zero finite values)
---- RHS       [min, max] : [ 1.000E+00, 9.000E+00] - Zero values observed as well
+--- RHS       [min, max] : [ 1.000E+00, 1.000E+01] - Zero values observed as well
 --- Bound     [min, max] : [        NA,        NA] - Zero values observed as well
 --- Matrix    [min, max] : [ 1.000E+00, 2.200E+00]
---- Executing CPLEX (Solvelink=2): elapsed 0:00:00.064
+--- Executing CPLEX (Solvelink=2): elapsed 0:00:00.133
 
 IBM ILOG CPLEX   47.6.0 c2de9d6d Sep 12, 2024          WEI x86 64bit/MS Window
 
@@ -46,13 +46,23 @@ CPXPARAM_Advance                                 0
 CPXPARAM_MIP_Display                             4
 CPXPARAM_MIP_Pool_Capacity                       0
 CPXPARAM_MIP_Tolerances_AbsMIPGap                0
-Row 'ResBalance_init(m2)' infeasible, all entries at implied bounds.
-Presolve time = 0.00 sec. (0.01 ticks)
+Tried aggregator 1 time.
+LP Presolve eliminated 19 rows and 7 columns.
+Reduced LP has 12 rows, 24 columns, and 42 nonzeros.
+Presolve time = 0.00 sec. (0.03 ticks)
+Initializing dual steep norms . . .
 
---- LP status (3): infeasible.
---- Cplex Time: 0.00sec (det. 0.01 ticks)
+Iteration log . . .
+Iteration:     1   Dual infeasibility =             0.000000
+Iteration:     2   Dual objective     =            62.400000
 
---- Model has been proven infeasible
+--- LP status (1): optimal.
+--- Cplex Time: 0.00sec (det. 0.05 ticks)
+
+
+Optimal solution found
+Objective:           51.600000
+
 --- Reading solution for model RESERVOIR
 *** Status: Normal completion
---- Job HW-5.gms Stop 10/09/24 20:00:58 elapsed 0:00:00.148
+--- Job HW-5.gms Stop 10/09/24 22:18:40 elapsed 0:00:00.251

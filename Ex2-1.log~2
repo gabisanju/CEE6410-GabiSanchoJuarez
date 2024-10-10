@@ -1,9 +1,9 @@
 
---- Job HW-4.gms Start 09/30/24 14:24:29 47.6.0 c2de9d6d WEX-WEI x86 64bit/MS Windows
+--- Job HW-5.gms Start 10/09/24 20:01:57 47.6.0 c2de9d6d WEX-WEI x86 64bit/MS Windows
 --- Applying:
     C:\GAMS\47\gmsprmNT.txt
 --- GAMS Parameters defined
-    Input C:\Users\A02395542\Box\2024_Fall\CEE6410\gams_tareas\CEE6410-GabiSanchoJuarez\HW-4.gms
+    Input C:\Users\A02395542\Box\2024_Fall\CEE6410\gams_tareas\CEE6410-GabiSanchoJuarez\HW-5.gms
     PageSize 0
     ScrDir C:\Users\A02395542\Box\2024_Fall\CEE6410\gams_tareas\CEE6410-GabiSanchoJuarez\225a\
     SysDir C:\GAMS\47\
@@ -21,16 +21,16 @@ Licensee: CEE 6410 Water Resources Systems Analysis      G240923|0002AO-GEN
 Processor information: 1 socket(s), 6 core(s), and 12 thread(s) available
 GAMS 47.6.0   Copyright (C) 1987-2024 GAMS Development. All rights reserved
 --- Starting compilation
---- HW-4.gms(72) 3 Mb
---- Starting execution: elapsed 0:00:00.015
---- Generating LP model PLANTING
---- HW-4.gms(70) 4 Mb
----   4 rows  3 columns  9 non-zeroes
+--- HW-5.gms(89) 3 Mb
+--- Starting execution: elapsed 0:00:00.020
+--- Generating LP model RESERVOIR
+--- HW-5.gms(87) 4 Mb
+---   44 rows  31 columns  103 non-zeroes
 --- Range statistics (absolute non-zero finite values)
---- RHS       [min, max] : [ 1.200E+04, 4.000E+06] - Zero values observed as well
+--- RHS       [min, max] : [ 1.000E+00, 9.000E+00] - Zero values observed as well
 --- Bound     [min, max] : [        NA,        NA] - Zero values observed as well
---- Matrix    [min, max] : [ 1.000E+00, 2.000E+03]
---- Executing CPLEX (Solvelink=2): elapsed 0:00:00.063
+--- Matrix    [min, max] : [ 1.000E+00, 2.200E+00]
+--- Executing CPLEX (Solvelink=2): elapsed 0:00:00.070
 
 IBM ILOG CPLEX   47.6.0 c2de9d6d Sep 12, 2024          WEI x86 64bit/MS Window
 
@@ -43,27 +43,16 @@ IBM ILOG CPLEX   47.6.0 c2de9d6d Sep 12, 2024          WEI x86 64bit/MS Window
 
 Version identifier: 22.1.1.0 | 2022-11-27 | 9160aff4d
 CPXPARAM_Advance                                 0
-CPXPARAM_Simplex_Display                         2
 CPXPARAM_MIP_Display                             4
 CPXPARAM_MIP_Pool_Capacity                       0
 CPXPARAM_MIP_Tolerances_AbsMIPGap                0
-Tried aggregator 1 time.
-LP Presolve eliminated 0 rows and 1 columns.
-Reduced LP has 3 rows, 2 columns, and 6 nonzeros.
-Presolve time = 0.00 sec. (0.00 ticks)
+Row 'ResBalance_init(m2)' infeasible, all entries at implied bounds.
+Presolve time = 0.00 sec. (0.01 ticks)
 
-Iteration      Dual Objective            In Variable           Out Variable
-     1 sI            0.000000            X(Tomatoes)RES_CONSTRAIN(Lab slack
-     2           22333.333333            X(Eggplant)RES_CONSTRAIN(Wat slack
-     3           20000.000000RES_CONSTRAIN(Lab slackRES_CONSTRAIN(Lan slack
+--- LP status (3): infeasible.
+--- Cplex Time: 0.00sec (det. 0.01 ticks)
 
---- LP status (1): optimal.
---- Cplex Time: 0.02sec (det. 0.01 ticks)
-
-
-Optimal solution found
-Objective:        20000.000000
-
---- Reading solution for model PLANTING
+--- Model has been proven infeasible
+--- Reading solution for model RESERVOIR
 *** Status: Normal completion
---- Job HW-4.gms Stop 09/30/24 14:24:30 elapsed 0:00:00.160
+--- Job HW-5.gms Stop 10/09/24 20:01:57 elapsed 0:00:00.156

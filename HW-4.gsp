@@ -1,16 +1,15 @@
 {
-    "file": "Ex2-1-labor.gms",
-    "name": "Ex2-1-labor",
+    "file": "HW-4.gms",
+    "name": "HW-4",
     "nodes": [
         {
             "codecMib": 106,
-            "file": "Ex2-1-labor.gms",
-            "name": "Ex2-1-labor.gms",
+            "file": "HW-4.gms",
+            "name": "HW-4.gms",
             "type": "gms"
         }
     ],
     "options": [
-        ""
     ],
     "path": ".",
     "workDir": "."

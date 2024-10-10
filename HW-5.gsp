@@ -1,6 +1,6 @@
 {
     "file": "HW-5.gms",
-    "name": "Ex2-1",
+    "name": "HW-5",
     "nodes": [
         {
             "codecMib": 106,
