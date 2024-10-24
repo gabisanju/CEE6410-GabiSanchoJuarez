@@ -1,0 +1,369 @@
+GAMS 47.6.0  c2de9d6d Sep 12, 2024          WEX-WEI x86 64bit/MS Windows - 10/24/24 11:58:24 Page 1
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+C o m p i l a t i o n
+
+
+      CEE 6410 Fall 2015
+      Problem 1 Chapter 7 on Bishop et.al., 
+       
+      Minimize cost to supply water for irrigation, with 2 possible water sources: a dam and a pump
+      Integer version using INTEGER VARIABLES statement and SOLVE as MIP.
+      Gabriela Sancho-Juarez
+      October 21, 2024
+  10   
+  11  * 1. DEFINE the SETS
+  12   
+  13  SETS src water supply sources /damHigh "Dam High", damLow "Dam Low", pmp "Pump"/,
+  14       t two seasons /s1 "season 1", s2 "season 2"/;
+  15   
+  16  * 2. DEFINE input data
+  17  PARAMETERS
+  18     CapCost(src) capital cost ($ to build)
+  19           /damHigh 10000,
+  20            damLow  6000,
+  21            pmp     8000/
+  22     OpCost(src) operating cost ($ per ac-ft)
+  23           /pmp 20/
+  24     DamMaxCapacity(src) Maximum capacity of source when built (ac-ft)
+  25           /damHigh 700,
+  26            damLow  300/
+  27     PumpCapacity(src) Maximum capacity of source when built (ac-ft per day)
+  28           /pmp 2.2/
+  29     IrrgDemand(t) Irrigation demand per season (ac-ft per acre)
+  30           /s1 1.0,
+  31            s2 3.0/
+  32     RiverInfl(t) River inflow per season (ac-ft)
+  33          /s1 600,
+  34           s2 200/
+  35     Groundwater(t) water gained in (ac-ft per day *180)
+  36          /S1 2
+  37           s2 2/
+  38     Days(t) Days of each season of the year
+  39         /s1 180,
+  40          s2 180/
+  41     IrrBenefit Revenue estimated in$ per year per acre irrigated
+  42         /300/
+  43  * "Integer" variables free within 0 to 1 bounds.
+  44     IntUpBnd(src) Upper bound on integer variables (#)
+  45            /damHigh 1,
+  46             damLow 1,
+  47             pmp 1/
+  48     IntLowBnd(src) Lower bound on integer variables (#)
+  49             /damHigh 0,
+  50              damLow 0,
+  51              pmp 0/;
+  52   
+  53  Groundwater(t) = Groundwater(t)*Days(t);
+  54   
+  55   
+  56  * 3. DEFINE the variables
+  57  VARIABLES I(src) binary decision to use or not each source src (1=yes 0=no)
+  58            X(src) volume of water provided by source src (ac-ft per year)
+  59            TCOST  total capital and operating costs of supply actions ($);
+  60  BINARY VARIABLES I;
+  61  * Non-negativity constraints
+  62  POSITIVE VARIABLES X;
+  63   
+  64  * 4. COMBINE variables and data in equations
+  65  EQUATIONS
+  66     COST              Total Cost ($) and objective function value
+  67     WaterBalance(t)   Water balance including the 2 seasons (ac-ft)
+  68     DamMaxCap(src)    Maximum capacity of dam when built (ac-ft)
+  69     PumpMaxCap(src)   Maximum capacity of pump when built (ac-ft per year)
+  70     IntUpBound(src)   Upper bound on interger variables (number)
+  71     IntLowBound(src)  Lower bound on integer variables (number);
+  72   
+  73  COST..                 TCOST =E= SUM(src,CapCost(src)*I(src) + OpCost(src)*X('pmp'));
+  74  WaterBalance(t)..      RiverInfl(t) + Groundwater(t) =G=   IrrgDemand(t);
+  75  DamMaxCap(src) ..      X(src) =L= DamMaxCapacity(src)*I(src);
+  76  PumpMaxCap (src)..     X(src) =L= PumpCapacity(src)*I(src);
+  77  IntUpBound(src) ..     I(src) =L= IntUpBnd(src);
+  78  IntLowBound(src) ..    I(src) =G= IntLowBnd(src);
+  79   
+  80  * 5. DEFINE the MODEL from the EQUATIONS
+  81  MODEL WatSupply /ALL/;
+  82   
+  83  * 6. Solve the Model as an LP (relaxed IP)
+  84  SOLVE WatSupply USING MIP MINIMIZING TCOST;
+  85   
+  86  DISPLAY X.L, I.L, TCOST.L;
+  87   
+  88  * Dump all input data and results to a GAMS gdx file
+  89  Execute_Unload "Hw-6.gdx";
+  90  * Dump the gdx file to an Excel workbook
+  91  Execute "gdx2xls Hw-6.gdx"
+
+
+COMPILATION TIME     =        0.000 SECONDS      3 MB  47.6.0 c2de9d6d WEX-WEI
+GAMS 47.6.0  c2de9d6d Sep 12, 2024          WEX-WEI x86 64bit/MS Windows - 10/24/24 11:58:24 Page 2
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Equation Listing    SOLVE WatSupply Using MIP From line 84
+
+
+---- COST  =E=  Total Cost ($) and objective function value
+
+COST..  - 10000*I(damHigh) - 6000*I(damLow) - 8000*I(pmp) - 20*X(pmp) + TCOST =E= 0 ; (LHS = 0)
+     
+
+---- WaterBalance  =G=  Water balance including the 2 seasons (ac-ft)
+
+                NONE
+
+
+---- DamMaxCap  =L=  Maximum capacity of dam when built (ac-ft)
+
+DamMaxCap(damHigh)..  - 700*I(damHigh) + X(damHigh) =L= 0 ; (LHS = 0)
+     
+DamMaxCap(damLow)..  - 300*I(damLow) + X(damLow) =L= 0 ; (LHS = 0)
+     
+DamMaxCap(pmp)..  X(pmp) =L= 0 ; (LHS = 0)
+     
+
+---- PumpMaxCap  =L=  Maximum capacity of pump when built (ac-ft per year)
+
+PumpMaxCap(damHigh)..  X(damHigh) =L= 0 ; (LHS = 0)
+     
+PumpMaxCap(damLow)..  X(damLow) =L= 0 ; (LHS = 0)
+     
+PumpMaxCap(pmp)..  - 2.2*I(pmp) + X(pmp) =L= 0 ; (LHS = 0)
+     
+
+---- IntUpBound  =L=  Upper bound on interger variables (number)
+
+IntUpBound(damHigh)..  I(damHigh) =L= 1 ; (LHS = 0)
+     
+IntUpBound(damLow)..  I(damLow) =L= 1 ; (LHS = 0)
+     
+IntUpBound(pmp)..  I(pmp) =L= 1 ; (LHS = 0)
+     
+
+---- IntLowBound  =G=  Lower bound on integer variables (number)
+
+IntLowBound(damHigh)..  I(damHigh) =G= 0 ; (LHS = 0)
+     
+IntLowBound(damLow)..  I(damLow) =G= 0 ; (LHS = 0)
+     
+IntLowBound(pmp)..  I(pmp) =G= 0 ; (LHS = 0)
+     
+GAMS 47.6.0  c2de9d6d Sep 12, 2024          WEX-WEI x86 64bit/MS Windows - 10/24/24 11:58:24 Page 3
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Column Listing      SOLVE WatSupply Using MIP From line 84
+
+
+---- I  binary decision to use or not each source src (1=yes 0=no)
+
+I(damHigh)
+                (.LO, .L, .UP, .M = 0, 0, 1, 0)
+   -10000       COST
+     -700       DamMaxCap(damHigh)
+        1       IntUpBound(damHigh)
+        1       IntLowBound(damHigh)
+
+I(damLow)
+                (.LO, .L, .UP, .M = 0, 0, 1, 0)
+    -6000       COST
+     -300       DamMaxCap(damLow)
+        1       IntUpBound(damLow)
+        1       IntLowBound(damLow)
+
+I(pmp)
+                (.LO, .L, .UP, .M = 0, 0, 1, 0)
+    -8000       COST
+       -2.2     PumpMaxCap(pmp)
+        1       IntUpBound(pmp)
+        1       IntLowBound(pmp)
+
+
+---- X  volume of water provided by source src (ac-ft per year)
+
+X(damHigh)
+                (.LO, .L, .UP, .M = 0, 0, +INF, 0)
+        1       DamMaxCap(damHigh)
+        1       PumpMaxCap(damHigh)
+
+X(damLow)
+                (.LO, .L, .UP, .M = 0, 0, +INF, 0)
+        1       DamMaxCap(damLow)
+        1       PumpMaxCap(damLow)
+
+X(pmp)
+                (.LO, .L, .UP, .M = 0, 0, +INF, 0)
+      -20       COST
+        1       DamMaxCap(pmp)
+        1       PumpMaxCap(pmp)
+
+
+---- TCOST  total capital and operating costs of supply actions ($)
+
+TCOST
+                (.LO, .L, .UP, .M = -INF, 0, +INF, 0)
+        1       COST
+
+GAMS 47.6.0  c2de9d6d Sep 12, 2024          WEX-WEI x86 64bit/MS Windows - 10/24/24 11:58:24 Page 4
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Range Statistics    SOLVE WatSupply Using MIP From line 84
+
+
+RANGE STATISTICS (ABSOLUTE NON-ZERO FINITE VALUES)
+
+RHS       [min, max] : [ 1.000E+00, 1.000E+00] - Zero values observed as well
+Bound     [min, max] : [ 1.000E+00, 1.000E+00] - Zero values observed as well
+Matrix    [min, max] : [ 1.000E+00, 1.000E+04]
+
+GAMS 47.6.0  c2de9d6d Sep 12, 2024          WEX-WEI x86 64bit/MS Windows - 10/24/24 11:58:24 Page 5
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE WatSupply Using MIP From line 84
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           6     SINGLE EQUATIONS           13
+BLOCKS OF VARIABLES           3     SINGLE VARIABLES            7
+NON ZERO ELEMENTS            20     DISCRETE VARIABLES          3
+
+
+GENERATION TIME      =        0.063 SECONDS      4 MB  47.6.0 c2de9d6d WEX-WEI
+GAMS 47.6.0  c2de9d6d Sep 12, 2024          WEX-WEI x86 64bit/MS Windows - 10/24/24 11:58:24 Page 6
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE WatSupply Using MIP From line 84
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   WatSupply           OBJECTIVE  TCOST
+     TYPE    MIP                 DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  84
+
+**** SOLVER STATUS     1 Normal Completion
+**** MODEL STATUS      1 Optimal
+**** OBJECTIVE VALUE                0.0000
+
+ RESOURCE USAGE, LIMIT          0.000 10000000000.000
+ ITERATION COUNT, LIMIT         0    2147483647
+*** This solver runs with a community license.
+--- GMO setup time: 0.00s
+--- GMO memory 0.50 Mb (peak 0.50 Mb)
+--- Dictionary memory 0.00 Mb
+--- Cplex 22.1.1.0 link memory 0.00 Mb (peak 0.00 Mb)
+--- Starting Cplex
+
+
+--- MIP status (101): integer optimal solution.
+--- Cplex Time: 0.00sec (det. 0.00 ticks)
+
+--- Returning a primal only solution to GAMS (marginals all set to NA).
+--- Fixing integer variables and solving final LP...
+
+
+--- Fixed MIP status (1): optimal.
+--- Cplex Time: 0.00sec (det. 0.01 ticks)
+
+
+Proven optimal solution
+MIP Solution:            0.000000    (0 iterations, 0 nodes)
+Final Solve:             0.000000    (0 iterations)
+
+Best possible:           0.000000
+Absolute gap:            0.000000
+Relative gap:            0.000000
+
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- EQU COST                .              .              .             1.0000      
+
+  COST  Total Cost ($) and objective function value
+
+---- EQU WaterBalance  Water balance including the 2 seasons (ac-ft)
+
+                NONE
+
+
+---- EQU DamMaxCap  Maximum capacity of dam when built (ac-ft)
+
+               LOWER          LEVEL          UPPER         MARGINAL
+
+damHigh        -INF             .              .              .          
+damLow         -INF             .              .              .          
+pmp            -INF             .              .              .          
+
+---- EQU PumpMaxCap  Maximum capacity of pump when built (ac-ft per year)
+
+               LOWER          LEVEL          UPPER         MARGINAL
+
+damHigh        -INF             .              .              .          
+damLow         -INF             .              .              .          
+pmp            -INF             .              .              .          
+
+---- EQU IntUpBound  Upper bound on interger variables (number)
+
+               LOWER          LEVEL          UPPER         MARGINAL
+
+damHigh        -INF             .             1.0000          .          
+damLow         -INF             .             1.0000          .          
+pmp            -INF             .             1.0000          .          
+
+---- EQU IntLowBound  Lower bound on integer variables (number)
+
+               LOWER          LEVEL          UPPER         MARGINAL
+
+damHigh          .              .            +INF             .          
+damLow           .              .            +INF             .          
+pmp              .              .            +INF             .          
+
+---- VAR I  binary decision to use or not each source src (1=yes 0=no)
+
+               LOWER          LEVEL          UPPER         MARGINAL
+
+damHigh          .              .             1.0000     10000.0000      
+damLow           .              .             1.0000      6000.0000      
+pmp              .              .             1.0000      8000.0000      
+
+---- VAR X  volume of water provided by source src (ac-ft per year)
+
+               LOWER          LEVEL          UPPER         MARGINAL
+
+damHigh          .              .            +INF            EPS         
+damLow           .              .            +INF            EPS         
+pmp              .              .            +INF           20.0000      
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- VAR TCOST             -INF             .            +INF             .          
+
+  TCOST  total capital and operating costs of supply actions ($)
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+GAMS 47.6.0  c2de9d6d Sep 12, 2024          WEX-WEI x86 64bit/MS Windows - 10/24/24 11:58:24 Page 7
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+E x e c u t i o n
+
+
+----     86 VARIABLE X.L  volume of water provided by source src (ac-ft per year)
+
+                      ( ALL       0.000 )
+
+
+----     86 VARIABLE I.L  binary decision to use or not each source src (1=yes 0=no)
+
+                      ( ALL       0.000 )
+
+
+----     86 VARIABLE TCOST.L               =        0.000  total capital and operating costs of supply actions ($)
+
+
+EXECUTION TIME       =        2.422 SECONDS      4 MB  47.6.0 c2de9d6d WEX-WEI
+
+
+USER: CEE 6410 Water Resources Systems Analysis      G240923|0002AO-GEN
+      Utah State University, Utah Water Research Laboratory     DCE3763
+      License for teaching and research at degree granting institutions
+
+
+**** FILE SUMMARY
+
+Input      C:\Users\A02395542\Box\2024_Fall\CEE6410\gams_tareas\CEE6410-GabiSanchoJuarez\Hw-6.gms
+Output     C:\Users\A02395542\Box\2024_Fall\CEE6410\gams_tareas\CEE6410-GabiSanchoJuarez\Hw-6.lst
