@@ -41,15 +41,13 @@ PlaneRownr=-1
 [RP:WASH]
 1=
 
-[MRUFILES]
-1=C:\Rosenberg\Work\USU\Research\CAREER\WASH-Model\InputDataModel\WASH-solution.gdx
-2=C:\Rosenberg\Work\USU\Classes\CEE6410\Fall2018\Lectures\GAMSexamples\HW5-MonteCarlo.gms
-
 [OPENWINDOW_1]
-FILE0=C:\Rosenberg\Work\USU\Classes\CEE6490\Spring2019\StudentWork\Project\ScratchWork\HadiaMoazzam\HP_Opt_1.gms
-FILE1=C:\Rosenberg\Work\USU\Classes\CEE6490\Spring2019\StudentWork\Project\ScratchWork\HadiaMoazzam\HP_Opt_1.gms
 MAXIM=0
 TOP=0
 LEFT=0
 HEIGHT=607
 WIDTH=1376
+
+[MRUFILES]
+1=C:\Rosenberg\Work\USU\Research\CAREER\WASH-Model\InputDataModel\WASH-solution.gdx
+2=C:\Rosenberg\Work\USU\Classes\CEE6410\Fall2018\Lectures\GAMSexamples\HW5-MonteCarlo.gms

@@ -1,5 +1,5 @@
 
---- Job WASH.gms Start 10/28/24 17:29:47 47.6.0 c2de9d6d WEX-WEI x86 64bit/MS Windows
+--- Job WASH.gms Start 10/28/24 17:05:10 47.6.0 c2de9d6d WEX-WEI x86 64bit/MS Windows
 --- Applying:
     C:\GAMS\47\gmsprmNT.txt
 --- GAMS Parameters defined
@@ -27,25 +27,25 @@ GAMS 47.6.0   Copyright (C) 1987-2024 GAMS Development. All rights reserved
 GDXXRW           47.6.0 c2de9d6d Sep 12, 2024          WEI x86 64bit/MS Window
 Input file : C:\Users\A02395542\Box\2024_Fall\CEE6410\gams_tareas\CEE6410-GabiSanchoJuarez\HW-7\WASH-master\InputDataModel\WASH_1yr_InputData.xlsx
 Output file: C:\Users\A02395542\Box\2024_Fall\CEE6410\gams_tareas\CEE6410-GabiSanchoJuarez\HW-7\WASH-master\InputDataModel\WASH-Data.gdx
-Total time = 2265 Ms
+Total time = 2297 Ms
 --- WASH.gms(238) 2 Mb
 --- GDXin=C:\Users\A02395542\Box\2024_Fall\CEE6410\gams_tareas\CEE6410-GabiSanchoJuarez\HW-7\WASH-master\InputDataModel\WASH-Data.gdx
 --- GDX File ($gdxIn) C:\Users\A02395542\Box\2024_Fall\CEE6410\gams_tareas\CEE6410-GabiSanchoJuarez\HW-7\WASH-master\InputDataModel\WASH-Data.gdx
 --- WASH.gms(534) 3 Mb
 --- $echo File C:\Users\A02395542\Box\2024_Fall\CEE6410\gams_tareas\CEE6410-GabiSanchoJuarez\HW-7\WASH-master\InputDataModel\baron.opt
 --- WASH.gms(602) 3 Mb
---- Starting execution: elapsed 0:00:02.491
+--- Starting execution: elapsed 0:00:02.542
 --- WASH.gms(529) 4 Mb
 --- Generating NLP model WASH
---- WASH.gms(559) 8 Mb
----   5,880 rows  5,005 columns  12,097 non-zeroes
----   6,734 nl-code  1,685 nl-non-zeroes
+--- WASH.gms(559) 7 Mb
+---   3,780 rows  3,505 columns  6,872 non-zeroes
+---   540 nl-code  60 nl-non-zeroes
 --- Range statistics (absolute non-zero finite values)
---- RHS       [min, max] : [ 1.000E-03, 1.000E+05] - Zero values observed as well
+--- RHS       [min, max] : [ 2.000E-02, 1.000E+05] - Zero values observed as well
 --- Bound     [min, max] : [ 2.234E-01, 2.451E+02] - Zero values observed as well
---- Matrix    [min, max] : [ 3.459E-11, 1.184E+02] - Zero values observed as well
---- WASH.gms(559) 6 Mb
---- Executing CONOPT (Solvelink=2): elapsed 0:00:02.690
+--- Matrix    [min, max] : [ 3.000E-06, 1.184E+02]
+--- WASH.gms(559) 5 Mb
+--- Executing CONOPT (Solvelink=2): elapsed 0:00:02.662
 
 CONOPT 4         47.6.0 c2de9d6d Sep 12, 2024          WEI x86 64bit/MS Window
 
@@ -56,60 +56,47 @@ CONOPT 4         47.6.0 c2de9d6d Sep 12, 2024          WEI x86 64bit/MS Window
                   GAMS Development Corporation
  
  
-    The user model has 5880 constraints and 5005 variables
-    with 12097 Jacobian elements, 1685 of which are nonlinear.
-    The Hessian of the Lagrangian has 485 elements on the diagonal,
-    600 elements below the diagonal, and 1685 nonlinear variables.
+    The user model has 3780 constraints and 3505 variables
+    with 6872 Jacobian elements, 60 of which are nonlinear.
+    The Hessian of the Lagrangian has 60 elements on the diagonal,
+    0 elements below the diagonal, and 60 nonlinear variables.
  
     Iter Phase   Ninf   Infeasibility   RGmax      NSB   Step  InItr MX OK
-       0   0          7.4283542164E+03 (Input point)
+       0   0          1.0097503879E+03 (Input point)
  
-    The pre-triangular part of the model has 2456 constraints and 1182 variables.
-    The post-triangular part of the model has 3002 constraints and variables.
+    The pre-triangular part of the model has 2101 constraints and 1475 variables.
+    The post-triangular part of the model has 1258 constraints and variables.
  
-    Preprocessed model has 422 constraints and 821 variables
-    with 1291 Jacobian elements, 14 of which are nonlinear.
+    Preprocessed model has 421 constraints and 772 variables
+    with 1289 Jacobian elements, 14 of which are nonlinear.
  
     Iter Phase   Ninf   Infeasibility   RGmax      NSB   Step  InItr MX OK
-                      2.9586523428E+02 (Full preprocessed model)
-                      3.0397038408E+01 (After scaling)
-                      1.1225208249E+01 (After adjusting individual variables)
-       1   0          8.3339706536E+00                 1.0E+00     3 T  T
-       2   0          8.3338874012E+00                 1.0E+00     1 T  T
-       3   1      10  2.7808522052E+00 1.0E+00      34 1.0E+00    24 T  T
-       4   1       2  5.3149712515E-01 1.0E+00      38 1.0E+00    27 T  T
-       5   1       1  4.3658283087E-02 1.0E+00       5 1.0E+00     6 T  T
+                      2.9078691564E+02 (Full preprocessed model)
+                      2.9274556068E+01 (After scaling)
+                      1.0789689314E+01 (After adjusting individual variables)
+       1   0          8.2799192973E+00                 1.0E+00     4 T  T
+       2   0          8.2798531991E+00                 1.0E+00     1 T  T
+       3   1       7  2.0626950494E+00 2.0E+00      26 1.0E+00    25 T  T
+       4   1       2  3.7745595457E-01 1.0E+00      25 1.0E+00    21 T  T
+       5   1       1  4.4635586637E-02 1.0E+00       5 1.0E+00     5 T  T
  
- ** Feasible solution. Value of objective =    435.605995640
- 
-    Iter Phase   Ninf     Objective     RGmax      NSB   Step  InItr MX OK
-       6   3          4.3872955731E+02 3.1E-01      32 1.0E+00    25 T  T
-       7   3          4.5011834121E+02 3.9E-01      39 1.0E+00    35 T  T
-       8   3          4.6672651005E+02 1.6E+00      53 1.0E+00    49 T  T
-       9   3          4.8754718274E+02 2.4E+00      82 1.0E+00    69 T  T
-      10   3          4.9118361889E+02 7.9E-02      42 1.0E+00    21 T  T
-      11   3          4.9165588476E+02 2.5E-01      32 1.0E+00     6 T  T
-      12   3          4.9179124816E+02 1.9E-01      31 9.4E-01    14 F  T
-      13   4          4.9179638829E+02 1.9E-01      31 1.0E+00    25 T  T
-      14   3          4.9180733237E+02 1.9E-02       6 3.0E-01     4 F  T
-      15   4          4.9180881825E+02 1.9E-02       6 1.0E+00     7 T  T
+ ** Feasible solution. Value of objective =    337.238720000
  
     Iter Phase   Ninf     Objective     RGmax      NSB   Step  InItr MX OK
-      16   4          4.9180913640E+02 8.6E-04       5 1.0E+00     3 F  T
-      17   4          4.9180916815E+02 2.1E-04       5 1.0E+00     2 F  T
-      18   4          4.9180916865E+02 2.6E-05       5 1.0E+00     2 F  T
-      19   4          4.9180916865E+02 5.2E-07       5 1.0E+00     1 F  T
-      20   4          4.9180916865E+02 6.4E-10       5
+       6   3          3.4159207680E+02 1.1E-01      56 1.0E+00    25 T  T
+       7   3          3.4332059251E+02 4.7E-02      68 1.0E+00    30 T  T
+       8   3          3.4364603731E+02 3.6E-03      31 1.0E+00    10 T  T
+       9   4          3.4364603731E+02 0.0E+00       0
  
- ** Optimal solution. Reduced gradient less than tolerance.
+ ** Optimal solution. There are no superbasic variables.
  
 --- Reading solution for model WASH
---- Executing after solve: elapsed 0:00:02.887
---- WASH.gms(596) 6 Mb
+--- Executing after solve: elapsed 0:00:02.827
+--- WASH.gms(596) 5 Mb
 --- GDX File (execute_unload) C:\Users\A02395542\Box\2024_Fall\CEE6410\gams_tareas\CEE6410-GabiSanchoJuarez\HW-7\WASH-master\InputDataModel\WASH_1yr_OutputData.gdx
---- WASH.gms(598) 6 Mb
+--- WASH.gms(598) 5 Mb
 GDX2XLS          47.6.0 c2de9d6d Sep 12, 2024          WEI x86 64bit/MS Window
 Output file: C:\Users\A02395542\Box\2024_Fall\CEE6410\gams_tareas\CEE6410-GabiSanchoJuarez\HW-7\WASH-master\InputDataModel\WASH_1yr_OutputData.xlsx
 (Created backup file)
 *** Status: Normal completion
---- Job WASH.gms Stop 10/28/24 17:29:57 elapsed 0:00:09.760
+--- Job WASH.gms Stop 10/28/24 17:05:19 elapsed 0:00:08.602
