@@ -1,4 +1,4 @@
-GAMS 47.6.0  c2de9d6d Sep 12, 2024          WEX-WEI x86 64bit/MS Windows - 10/09/24 22:19:16 Page 1
+GAMS 47.6.0  c2de9d6d Sep 12, 2024          WEX-WEI x86 64bit/MS Windows - 11/03/24 16:50:51 Page 1
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 C o m p i l a t i o n
 
@@ -86,7 +86,7 @@ C o m p i l a t i o n
 
 
 COMPILATION TIME     =        0.000 SECONDS      3 MB  47.6.0 c2de9d6d WEX-WEI
-GAMS 47.6.0  c2de9d6d Sep 12, 2024          WEX-WEI x86 64bit/MS Windows - 10/09/24 22:19:16 Page 2
+GAMS 47.6.0  c2de9d6d Sep 12, 2024          WEX-WEI x86 64bit/MS Windows - 11/03/24 16:50:51 Page 2
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Equation Listing    SOLVE RESERVOIR Using LP From line 80
 
@@ -155,7 +155,7 @@ ResBalance(m3)..  - X(res,m2) + X(res,m3) + X(hydro,m3) + X(spill,m3) =E= 3 ; (L
      
 REMAINING 3 ENTRIES SKIPPED
 
-GAMS 47.6.0  c2de9d6d Sep 12, 2024          WEX-WEI x86 64bit/MS Windows - 10/09/24 22:19:16 Page 3
+GAMS 47.6.0  c2de9d6d Sep 12, 2024          WEX-WEI x86 64bit/MS Windows - 11/03/24 16:50:51 Page 3
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Column Listing      SOLVE RESERVOIR Using LP From line 80
 
@@ -188,7 +188,7 @@ VBenefit
                 (.LO, .L, .UP, .M = -INF, 0, +INF, 0)
         1       BENEFIT
 
-GAMS 47.6.0  c2de9d6d Sep 12, 2024          WEX-WEI x86 64bit/MS Windows - 10/09/24 22:19:16 Page 4
+GAMS 47.6.0  c2de9d6d Sep 12, 2024          WEX-WEI x86 64bit/MS Windows - 11/03/24 16:50:51 Page 4
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Range Statistics    SOLVE RESERVOIR Using LP From line 80
 
@@ -199,7 +199,7 @@ RHS       [min, max] : [ 1.000E+00, 9.000E+00] - Zero values observed as well
 Bound     [min, max] : [        NA,        NA] - Zero values observed as well
 Matrix    [min, max] : [ 1.000E+00, 2.200E+00]
 
-GAMS 47.6.0  c2de9d6d Sep 12, 2024          WEX-WEI x86 64bit/MS Windows - 10/09/24 22:19:16 Page 5
+GAMS 47.6.0  c2de9d6d Sep 12, 2024          WEX-WEI x86 64bit/MS Windows - 11/03/24 16:50:51 Page 5
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Model Statistics    SOLVE RESERVOIR Using LP From line 80
 
@@ -211,8 +211,8 @@ BLOCKS OF VARIABLES           2     SINGLE VARIABLES           31
 NON ZERO ELEMENTS            80
 
 
-GENERATION TIME      =        0.094 SECONDS      4 MB  47.6.0 c2de9d6d WEX-WEI
-GAMS 47.6.0  c2de9d6d Sep 12, 2024          WEX-WEI x86 64bit/MS Windows - 10/09/24 22:19:16 Page 6
+GENERATION TIME      =        0.188 SECONDS      4 MB  47.6.0 c2de9d6d WEX-WEI
+GAMS 47.6.0  c2de9d6d Sep 12, 2024          WEX-WEI x86 64bit/MS Windows - 11/03/24 16:50:51 Page 6
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Solution Report     SOLVE RESERVOIR Using LP From line 80
 
@@ -227,7 +227,7 @@ Solution Report     SOLVE RESERVOIR Using LP From line 80
 **** MODEL STATUS      1 Optimal
 **** OBJECTIVE VALUE               51.6000
 
- RESOURCE USAGE, LIMIT          0.000 10000000000.000
+ RESOURCE USAGE, LIMIT          0.031 10000000000.000
  ITERATION COUNT, LIMIT         9    2147483647
 *** This solver runs with a community license.
 --- GMO setup time: 0.00s
@@ -238,7 +238,7 @@ Solution Report     SOLVE RESERVOIR Using LP From line 80
 
 
 --- LP status (1): optimal.
---- Cplex Time: 0.00sec (det. 0.05 ticks)
+--- Cplex Time: 0.03sec (det. 0.05 ticks)
 
 
 Optimal solution found
@@ -357,7 +357,7 @@ stA  .m6          .             1.0000        +INF             .
                              0  UNBOUNDED
 
 
-EXECUTION TIME       =        0.204 SECONDS      4 MB  47.6.0 c2de9d6d WEX-WEI
+EXECUTION TIME       =        0.469 SECONDS      4 MB  47.6.0 c2de9d6d WEX-WEI
 
 
 USER: CEE 6410 Water Resources Systems Analysis      G240923|0002AO-GEN

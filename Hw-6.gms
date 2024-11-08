@@ -41,15 +41,15 @@ PARAMETERS
    IrrBenefit Revenue estimated in$ per year per acre irrigated
        /300/
 * "Integer" variables free within 0 to 1 bounds. 
-   IntUpBnd(src) Upper bound on integer variables (#)
-          /damHigh 1,
-           damLow 1,
-           pmp 1/
-   IntLowBnd(src) Lower bound on integer variables (#)
-           /damHigh 0,
-            damLow 0,
-            pmp 0/;
-    
+*   IntUpBnd(src) Upper bound on integer variables (#)
+*         /damHigh 1,
+*          damLow 1,
+*         pmp 1/
+*  IntLowBnd(src) Lower bound on integer variables (#)
+*          /damHigh 0,
+*           damLow 0,
+*           pmp 0/;
+*   
 Groundwater(t) = Groundwater(t)*Days(t);
 
 
